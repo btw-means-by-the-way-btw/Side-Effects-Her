@@ -1,0 +1,42 @@
+.summary { margin-top:24px; border-radius:20px; padding:20px; background:var(--background); }
+.availability { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+.availability h3 { font-size:14px; font-weight:600; color:var(--primary); }
+.availability p { margin-top:5px; font-size:11px; line-height:1.7; color:var(--muted-foreground); }
+.badge { display:inline-block; flex-shrink:0; padding:6px 11px; border-radius:99px; font-size:11px; font-weight:600; background:var(--muted); color:var(--muted-foreground); }
+.available { background:var(--accent); color:var(--accent-foreground); }
+.stats { margin-top:16px; }
+.stats > div { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 18px; padding:13px 0; border-top:1px solid var(--border); }
+.stats dt { display:flex; align-items:center; gap:10px; font-size:13px; line-height:1.6; }
+.stats dd { font-size:19px; font-weight:600; font-variant-numeric:tabular-nums; margin-left:19px; }
+.stats small,.reactionList small { font-size:11px; color:var(--muted-foreground); font-weight:400; }
+.dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.noValue { font-size:12px; color:var(--muted-foreground); font-weight:400; }
+.caption { margin-top:12px; padding-top:12px; border-top:1px solid var(--border); font-size:12px; line-height:1.75; color:var(--primary); }
+.explanation { margin:18px 0 8px; font-size:13px; line-height:1.85; color:var(--muted-foreground); max-width:85ch; }
+.coverage { font-size:11px; line-height:1.8; color:var(--muted-foreground); }
+.reactions { margin-top:24px; padding:20px; border:1px solid var(--border); border-radius:20px; }
+.reactionHeading { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.reactionHeading h3 { font:400 26px/1.2 var(--serif); margin:9px 0 16px; max-width:34ch; }
+.sourceTag { background:var(--accent); color:var(--accent-foreground); padding:5px 9px; border-radius:99px; font-size:10px; }
+.reactionList { list-style:none; padding:0; margin:0 0 13px; }
+.reactionList li { display:grid; grid-template-columns:22px minmax(0,1fr) auto; gap:8px; align-items:baseline; padding:12px 0; border-top:1px solid var(--border); font-size:13px; line-height:1.7; }
+.ordinal { font-size:10px; color:var(--muted-foreground); }
+.untranslated { color:var(--muted-foreground); font-size:10px; }
+.originalTerms { margin-top:12px; font-size:11px; line-height:1.8; color:var(--muted-foreground); }
+.originalTerms summary { cursor:pointer; display:list-item; padding:10px 0; color:var(--evidence); }
+.originalTerms p { margin:4px 0 10px; }
+.originalTerms ul { list-style:none; padding:0; }
+.originalTerms li { display:flex; justify-content:space-between; gap:8px 20px; flex-wrap:wrap; padding:7px 0; border-top:1px solid var(--border); }
+.reactionList strong { font-size:14px; font-weight:600; font-variant-numeric:tabular-nums; text-align:right; }
+.reactionList strong small { display:block; }
+.meaning { display:grid; gap:14px; margin-top:22px; }
+.meaning section { padding:20px; border-radius:18px; background:var(--muted); }
+.meaning h3 { font-size:10px; line-height:1.6; letter-spacing:.08em; font-weight:600; color:var(--primary); }
+.meaning ul { list-style:disc; padding-left:17px; margin-top:12px; }
+.meaning li { font-size:12px; line-height:1.8; color:var(--muted-foreground); margin-top:7px; }
+.meaning li::marker { color:var(--reports); }
+.empty { font-size:13px; line-height:1.8; margin:14px 0; color:var(--muted-foreground); }
+.footer { margin-top:22px; padding-top:17px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:6px 24px; justify-content:space-between; font-size:11px; line-height:1.8; color:var(--muted-foreground); }
+.footer > div { display:flex; flex-wrap:wrap; gap:4px 16px; }
+.footer a,.sourceLink { display:inline-flex; align-items:center; min-height:44px; color:var(--evidence); text-decoration:underline; text-underline-offset:3px; font-size:11px; }
+@media (min-width:640px) { .summary,.reactions { padding:24px; } .meaning { grid-template-columns:1fr 1fr; } .stats dd { margin-left:0; } .reactionList strong small { display:inline; } }

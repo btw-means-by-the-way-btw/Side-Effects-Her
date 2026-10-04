@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: sideeffecther
+      POSTGRES_USER: sideeffecther
+      POSTGRES_PASSWORD: sideeffecther_dev
+    ports:
+      - "127.0.0.1:15432:5432"
+    volumes:
+      - sideeffecther_pgdata:/var/lib/postgresql/data
+      - ./supabase/migrations/20261003_initial.sql:/docker-entrypoint-initdb.d/001-initial.sql:ro
+      - ./supabase/migrations/20261003_cycle_context.sql:/docker-entrypoint-initdb.d/002-cycle-context.sql:ro
+      - ./supabase/migrations/20261003_cycle_estimates.sql:/docker-entrypoint-initdb.d/003-cycle-estimates.sql:ro
+      - ./supabase/migrations/20261003_accounts_daily.sql:/docker-entrypoint-initdb.d/004-accounts-daily.sql:ro
+      - ./supabase/migrations/20261004_checkin_meals.sql:/docker-entrypoint-initdb.d/005-checkin-meals.sql:ro
+      - ./supabase/migrations/20261004_personal_patterns.sql:/docker-entrypoint-initdb.d/006-personal-patterns.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sideeffecther -d sideeffecther"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+volumes:
+  sideeffecther_pgdata:
